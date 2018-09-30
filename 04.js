@@ -46,7 +46,14 @@ function reverseArrayInPlace(arr) {
 
 // array to list
 function arrayToList(arr) {
+  let list = {};
 
+  for (let i of arr) {
+    console.log(i);
+    list.value = i;
+  }
+
+  return list;
 }
 
-console.log(arrayToList[1, 2, 3]);
+console.log(arrayToList([1, 2, 3]));
