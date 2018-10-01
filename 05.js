@@ -59,3 +59,32 @@ Rectangle.prototype.getArea = function() {
 
 let rect = new Rectangle(100, 50);
 console.log(rect.getArea());
+
+
+function Human(name) {
+    this.name = name;
+    this.talk = function() { 
+        console.log('Hello My Name Is ' + this.name);
+    }
+}
+
+function Student(name) {
+    this.name = name;
+    this.school = "CBS school";
+}
+
+function Worker(name) {
+    this.name = name;
+    this.speciality ="Software developer";
+}
+
+let human = new Human("name");
+
+Student.prototype = human;
+Worker.prototype = human;
+
+let Alex = new Student("Alexander");
+let Andrew = new Worker("Andrew");
+
+Alex.talk();
+Andrew.talk();
