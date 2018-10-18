@@ -1,0 +1,11 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/umren/learning",
+  "author": "Constantine S <umren@yandex.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
