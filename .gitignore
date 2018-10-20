@@ -1,2 +1,17 @@
-node_modules/*
-yarn.lock
+# node
+js/node_modules/*
+js/yarn.lock
+
+# c
+c/.vscode/*
+
+# scala
+scala/.idea
+scala/project
+scala/target
+
+# rust
+rust/target
+rust/**/*.rs.bk
+
+
