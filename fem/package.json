@@ -1,0 +1,22 @@
+{
+  "name": "fem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "petfinder-client": "^0.0.3",
+    "react": "15.x || 16.x || 16.4.0-alpha.0911da3",
+    "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3"
+  }
+}

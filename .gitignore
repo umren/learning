@@ -1,19 +1,15 @@
 .vscode
 
 # node
-js/node_modules/*
-js/yarn.lock
-
-# c
-c/.vscode/*
-
-# scala
-scala/.idea
-scala/project
-scala/target
+general/node_modules/*
+general/*.lock
 
 # rust
 rust/target
 rust/**/*.rs.bk
 
-
+# fem
+fem/node_modules/*
+fem/dist/*
+fem/.cache/*
+fem/*.lock
