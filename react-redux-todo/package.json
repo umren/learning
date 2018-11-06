@@ -1,20 +1,25 @@
 {
-  "name": "movie",
+  "name": "react-redux-todo",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "parcel-bundler": "^1.10.3"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^4.0.3",
+    "parcel-bundler": "^1.10.3"
   }
 }
