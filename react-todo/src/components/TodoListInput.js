@@ -20,8 +20,8 @@ export default class TodoListInput extends Component {
 
   handleKeyPress(e) {
     if (e.key == "Enter" && e.target.value !== "") {
-      console.log("Adding todo item!");
       this.props.addTodoItem(this.state.text);
+      this.setState({ text: "" });
     }
   }
 
