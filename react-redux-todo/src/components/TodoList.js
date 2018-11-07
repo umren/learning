@@ -10,37 +10,30 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
 
-    this.addTodoItem = this.addTodoItem.bind(this);
     this.removeTodoItem = this.removeTodoItem.bind(this);
     this.toggleTodoItem = this.toggleTodoItem.bind(this);
   }
 
-  // add new item from input component
-  addTodoItem(newItem) {
-    this.props.dispatch(addTodo(newItem));
-  }
-
   // toggle if item completed or not
   toggleTodoItem(event) {
-    let itemIndex = event.target.dataset.key;
-    this.props.dispatch(toggleTodo(itemIndex));
+    let key = event.target.dataset.key;
+    this.props.dispatch(toggleTodo(key));
   }
 
   // remove todo item
   removeTodoItem(event) {
-    let removeItemIndex = event.target.dataset.key;
-    this.props.dispatch(removeTodo(removeItemIndex));
-    console.log(this.state);
+    let key = event.target.dataset.key;
+    this.props.dispatch(removeTodo(key));
   }
 
   render() {
     return (
       <Container>
-        <TodoListInput addTodoItem={this.addTodoItem} />
-        {this.props.todoList.map((todo, index) => (
+        <TodoListInput />
+        {this.props.todoList.map(todo => (
           <TodoListItem
-            key={index}
-            data-key={index}
+            key={todo.id}
+            data-key={todo.id}
             value={todo.text}
             completed={todo.completed}
             toggleTodoItem={this.toggleTodoItem}

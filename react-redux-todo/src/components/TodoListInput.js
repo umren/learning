@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addTodo } from "../actions";
 
-export default class TodoListInput extends Component {
+class TodoListInput extends Component {
   constructor(props) {
     super(props);
 
@@ -20,7 +22,7 @@ export default class TodoListInput extends Component {
 
   handleKeyPress(e) {
     if (e.key == "Enter" && e.target.value !== "") {
-      this.props.addTodoItem(this.state.text);
+      this.props.dispatch(addTodo(this.state.text));
       this.setState({ text: "" });
     }
   }
@@ -37,3 +39,5 @@ export default class TodoListInput extends Component {
     );
   }
 }
+
+export default connect()(TodoListInput);
