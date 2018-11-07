@@ -1,7 +1,26 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { toggleTodo, removeTodo } from "../actions";
 
-export default class TodoListItem extends Component {
+class TodoListItem extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleToggleTodo = this.handleToggleTodo.bind(this);
+    this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
+  }
+
+  handleToggleTodo(e) {
+    let key = parseInt(e.target.dataset.key);
+    this.props.dispatch(toggleTodo(key));
+  }
+
+  handleRemoveTodo(e) {
+    let key = parseInt(e.target.dataset.key);
+    this.props.dispatch(removeTodo(key));
+  }
+
   render() {
     let el;
 
@@ -10,14 +29,14 @@ export default class TodoListItem extends Component {
         <ContainerLineThrought>
           <Button
             data-key={this.props["data-key"]}
-            onClick={this.props.toggleTodoItem}
+            onClick={this.handleToggleTodo}
           >
             V
           </Button>
           {this.props.value}{" "}
           <button
             data-key={this.props["data-key"]}
-            onClick={this.props.removeTodoItem}
+            onClick={this.handleRemoveTodo}
           >
             X
           </button>
@@ -28,14 +47,14 @@ export default class TodoListItem extends Component {
         <Container>
           <Button
             data-key={this.props["data-key"]}
-            onClick={this.props.toggleTodoItem}
+            onClick={this.handleToggleTodo}
           >
             V
           </Button>
           {this.props.value}{" "}
           <button
             data-key={this.props["data-key"]}
-            onClick={this.props.removeTodoItem}
+            onClick={this.handleRemoveTodo}
           >
             X
           </button>
@@ -57,3 +76,5 @@ const ContainerLineThrought = styled.div`
 const Button = styled.button`
   margin-right: 5px;
 `;
+
+export default connect()(TodoListItem);
