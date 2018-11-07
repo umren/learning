@@ -1,19 +1,19 @@
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "./actions";
 
-function todos(state = [], action) {
+export default function todos(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
       return [
         ...state,
         {
-          text: action.text,
+          text: action.payload,
           completed: false
         }
       ];
 
     case TOGGLE_TODO:
       return state.map((todo, index) => {
-        if (index === action.index) {
+        if (index === action.payload) {
           return Object.assign({}, todo, {
             completed: !todo.completed
           });
@@ -21,6 +21,10 @@ function todos(state = [], action) {
         return todo;
       });
     case REMOVE_TODO:
-    // TODO
+      return state.filter((todo, index) => {
+        index != action.payload;
+      });
+    default:
+      return state;
   }
 }
