@@ -39,14 +39,11 @@ function checkParam() {
 
 // combine two arrays [1, [1, 2, [3, 4]], [2, 4]] -> [1, 1, 2, 3, 4, 2, 4]
 
-function compact(arr) {
-  arr.forEach(val => {
-    if (Array.isArray(val)) {
-      console.log("Array");
-    } else {
-      console.log("Not Array");
-    }
-  });
-}
+const flatten = arr =>
+  arr.reduce(
+    (flat, toFlatten) =>
+      flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten),
+    []
+  );
 
-compact([1, 2, [3, 4]]);
+console.log(flatten([1, 2, [3, 4]]));
